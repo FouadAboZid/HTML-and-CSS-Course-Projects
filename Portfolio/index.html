@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fouad | Cyber Portfolio</title>
+<style>
+  /* General Reset */
+  body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #0d0d0d;
+    color: #00ff00; /* Matrix Green */
+    padding-top: 60px; /* Space for fixed navbar */
+  }
+
+  /* FIXED NAVBAR */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    z-index: 1000;
+    border-bottom: 2px solid #00ff00;
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: #ffffff; /* Font Color */
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Navbar Hover Effect */
+  .navbar a:hover {
+    background-color: #00ff00;
+    color: #000;
+  }
+
+  /* VIDEO WITH TEXT OVERLAY (Autoplay, Mute, Loop) */
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-bottom: 2px solid #00ff00;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(90deg) contrast(1.2); /* Tech vibe filter */
+  }
+
+  .video-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00ff00;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 0 15px #00ff00;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    border: 1px solid #00ff00;
+  }
+
+  /* TWO COLUMN LAYOUT */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .column {
+    flex: 50%;
+    height: 350px; /* Specific Height */
+    padding: 30px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+  }
+
+  /* Column Text Styling */
+  .column h2 {
+    color: #fff;
+    border-bottom: 1px dashed #00ff00;
+    padding-bottom: 10px;
+  }
+  .column p {
+    color: #cccccc; /* Font color inside columns */
+    font-size: 1.1rem;
+  }
+
+  /* P ELEMENT HOVER EFFECT */
+  p {
+    transition: 0.3s;
+  }
+  p:hover {
+    color: #00ff00 !important;
+    text-shadow: 0 0 5px #00ff00;
+    cursor: crosshair;
+  }
+
+  /* IMAGE MANIPULATION SECTION */
+  .image-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #111;
+  }
+
+  .styled-img {
+    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Centering Image */
+    border-radius: 20px; /* Rounded Edges */
+    filter: contrast(120%) grayscale(100%); /* CSS Filter */
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  }
+
+  /* IMAGE OVERLAY FADE */
+  .overlay-container {
+    position: relative;
+    width: 350px;
+    margin: 50px auto;
+  }
+
+  .overlay-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    filter: brightness(0.7);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 255, 0, 0.85); /* Green Overlay */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overlay-container:hover .overlay {
+    opacity: 1;
+  }
+
+  .text-overlay {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  /* TABLE SECTION */
+  .table-section {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #0d0d0d;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 70%;
+    border: 2px solid #00ff00; /* Table Border */
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  th, td {
+    padding: 20px; /* Cell Padding */
+    text-align: left;
+    border: 1px solid #333;
+  }
+
+  /* Top Row Background Color */
+  th {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #000;
+    color: #00ff00;
+    padding: 30px;
+    text-align: center; /* Centered */
+    font-weight: bold; /* Bold */
+    border-top: 1px solid #00ff00;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Fouad</a>
+  <a href="#about">About</a>
+  <a href="#work">Projects</a>
+</div>
+
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="https://player.vimeo.com/external/371842876.sd.mp4?s=d954f0685981258830113f8373b3206587c4a17d&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-text">FOUAD'S WORLD</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#141414;">
+    <h2>Digital Architect</h2>
+    <p>I build systems that live on the edge of innovation. Hover over this text to see the system react.</p>
+  </div>
+  <div class="column" style="background-color:#1a1a1a;">
+    <h2>Core Skills</h2>
+    <p>HTML5, CSS3, and the raw power of code. We define the future line by line.</p>
+  </div>
+</div>
+
+<div class="overlay-container">
+  <img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar" class="overlay-image">
+  <div class="overlay">
+    <div class="text-overlay">System Active</div>
+  </div>
+</div>
+
+<div class="image-section">
+  <h2 style="color:white; margin-bottom: 30px;">Visual Data Processing</h2>
+  <img src="https://images.pexels.com/photos/2611690/pexels-photo-2611690.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tech" class="styled-img">
+</div>
+
+<div class="table-section">
+  <table>
+    <tr>
+      <th>Project ID</th>
+      <th>Status</th>
+      <th>Language</th>
+    </tr>
+    <tr>
+      <td>Alpha-1</td>
+      <td>Deployed</td>
+      <td>Python</td>
+    </tr>
+    <tr>
+      <td>Beta-2</td>
+      <td>Testing</td>
+      <td>JavaScript</td>
+    </tr>
+  </table>
+</div>
+
+<footer>
+  &copy; 2026 Fouad Portfolio. Executing Shutdown Sequence.
+</footer>
+
+</body>
+</html>
